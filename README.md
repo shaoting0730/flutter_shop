@@ -1,17 +1,17 @@
 #  Flutter 电商学习项目 (更新中)
- [视频教程:技术胖] ( https://m.qlchat.com/wechat/page/topic-simple-video?topicId=2000003599735644&byhand=1 )    <br/>
- 
+ [视频教程:技术胖]( https://m.qlchat.com/wechat/page/topic-simple-video?topicId=2000003599735644&byhand=1 )    <br/>
+
 ## 版本信息:
   version: 1.0.0+1
   environment:
     sdk: ">=2.0.0-dev.68.0 <3.0.0"
 
 ### 使用三方库
- [网络请求库: dio] ( https://github.com/flutterchina/dio )  <br/>
- [轮播库: flutter_swiper] ( https://github.com/best-flutter/flutter_swiper )  <br/>
- [UI尺寸适配库: flutter_screenutil] ( https://github.com/OpenFlutter/flutter_screenutil )  <br/>
- [打电话: url_launcher] ( https://github.com/flutter/plugins )  <br/>
- [下拉刷新&上拉加载: flutter_easyrefresh] ( https://github.com/xuelongqy/flutter_easyrefresh )  <br/>
+ [网络请求库: dio]( https://github.com/flutterchina/dio )  <br/>
+ [轮播库: flutter_swiper]( https://github.com/best-flutter/flutter_swiper )  <br/>
+ [UI尺寸适配库: flutter_screenutil]( https://github.com/OpenFlutter/flutter_screenutil )  <br/>
+ [打电话: url_launcher]( https://github.com/flutter/plugins )  <br/>
+ [下拉刷新&上拉加载: flutter_easyrefresh]( https://github.com/xuelongqy/flutter_easyrefresh )  <br/>
  
 ### 代码结构
 >- |--lib
