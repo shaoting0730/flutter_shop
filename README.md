@@ -18,6 +18,8 @@
 >- |--lib
 >    - |-- config 
 >      - |-- service_url.dart (存放url)
+>    - |-- model 
+>      - |-- category_model.dart (分类model)
 >    - |-- pages (页面)
 >      - |-- index_page.dart  (tabbar页面)
 >      - |-- home_page.dart  (首页页面)
