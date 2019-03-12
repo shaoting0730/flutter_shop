@@ -2,9 +2,9 @@
  [视频教程:技术胖]( https://m.qlchat.com/wechat/page/topic-simple-video?topicId=2000003599735644&byhand=1 )    <br/>
 
 ## 版本信息:
-  version: 1.0.0+1
-  environment:
-    sdk: ">=2.0.0-dev.68.0 <3.0.0"
+  version: 1.0.0+1  <br/>
+  environment:  <br/>
+    sdk: ">=2.0.0-dev.68.0 <3.0.0" <br/>
 
 ### 使用三方库
  [网络请求库: dio]( https://github.com/flutterchina/dio )  <br/>
@@ -32,8 +32,11 @@
 ![image](https://github.com/pheromone/flutter_shop/blob/master/homePage1.png) <br/>
 ![image](https://github.com/pheromone/flutter_shop/blob/master/homepag2.png) <br/>
 ### 分类
+...
 ### 购物车
+...
 ### 会员中心
+...
 
 
  
