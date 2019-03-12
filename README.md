@@ -3,9 +3,8 @@
 
 ## 版本信息:
   version: 1.0.0+1  <br/>
-  environment:  <br/>
-    sdk: ">=2.0.0-dev.68.0 <3.0.0" <br/>
-
+  environment:   sdk: ">=2.0.0-dev.68.0 <3.0.0" <br/>
+    
 ### 使用三方库
  [网络请求库: dio]( https://github.com/flutterchina/dio )  <br/>
  [轮播库: flutter_swiper]( https://github.com/best-flutter/flutter_swiper )  <br/>
