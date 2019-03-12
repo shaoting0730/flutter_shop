@@ -5,6 +5,8 @@
   version: 1.0.0+1   <br/>
   environment:   sdk: ">=2.0.0-dev.68.0 <3.0.0"  <br/>
     
+### model转换  [https://javiercbk.github.io/json_to_dart/ ]( https://javiercbk.github.io/json_to_dart/  )  <br/>
+
 ### 使用三方库
  [网络请求库: dio]( https://github.com/flutterchina/dio )  <br/>
  [轮播库: flutter_swiper]( https://github.com/best-flutter/flutter_swiper )  <br/>
