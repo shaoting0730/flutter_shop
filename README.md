@@ -1,5 +1,5 @@
 #  Flutter 电商学习项目 (更新中)
-[视频教程:技术胖] ( https://m.qlchat.com/wechat/page/topic-simple-video?topicId=2000003599735644&byhand=1 )    <br/>
+ [视频教程:技术胖] ( https://m.qlchat.com/wechat/page/topic-simple-video?topicId=2000003599735644&byhand=1 )    <br/>
  
 ## 版本信息:
   version: 1.0.0+1
@@ -27,10 +27,13 @@
 >      - |-- service_method.dart (网络请求)
 >    - |-- mian.dart  (入口) 
 
-### 项目截图
-首页
+## 项目截图
+### 首页
 ![image](https://github.com/pheromone/flutter_shop/blob/master/homePage1.png) <br/>
 ![image](https://github.com/pheromone/flutter_shop/blob/master/homepag2.png) <br/>
+### 分类
+### 购物车
+### 会员中心
 
 
  
