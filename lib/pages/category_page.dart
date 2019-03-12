@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';  // getCategory
 import '../service/service_method.dart';
 import 'dart:convert';
+import '../model/category_model.dart';
 
 class CategoryPage extends StatefulWidget {
   final Widget child;
@@ -14,8 +15,12 @@ class _CategoryPageState extends State<CategoryPage> {
   void _CategoryPage() async{
     await request('getCategory').then((val){
         var data = json.decode(val.toString());
+        CategoryModel model = CategoryModel.fromJson(data);
         print('数据来了');
-        print(data);
+        model.data.forEach((i){
+          print(i.mallCategoryName);
+          print(i.mallCategoryId);
+        });
     });
   }
 
