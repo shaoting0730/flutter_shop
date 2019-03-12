@@ -2,8 +2,8 @@
  [视频教程:技术胖]( https://m.qlchat.com/wechat/page/topic-simple-video?topicId=2000003599735644&byhand=1 )    <br/>
 
 ## 版本信息:
-  version: 1.0.0+1  <br/>
-  environment:   sdk: ">=2.0.0-dev.68.0 <3.0.0" <br/>
+  version: 1.0.0+1   <br/>
+  environment:   sdk: ">=2.0.0-dev.68.0 <3.0.0"  <br/>
     
 ### 使用三方库
  [网络请求库: dio]( https://github.com/flutterchina/dio )  <br/>
