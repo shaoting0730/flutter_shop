@@ -24,6 +24,7 @@ dependencies:
   flutter_screenutil: ^0.5.1
   url_launcher: ^5.0.1
   flutter_easyrefresh: ^1.2.7
+  provide: ^1.0.2
 
 
 dev_dependencies:
