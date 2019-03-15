@@ -6,6 +6,8 @@
   environment:   sdk: ">=2.0.0-dev.68.0 <3.0.0"  <br/>
     
 ### model转换  [https://javiercbk.github.io/json_to_dart/ ]( https://javiercbk.github.io/json_to_dart/  )  <br/>
+### state管理  [provide: ^1.0.2 ]( https://github.com/google/flutter-provide  )  <br/>
+
 
 ### 使用三方库
  [网络请求库: dio]( https://github.com/flutterchina/dio )  <br/>
@@ -20,6 +22,8 @@
 >      - |-- service_url.dart (存放url)
 >    - |-- model 
 >      - |-- category_model.dart (分类model)
+>    - |-- provide 
+>      - |-- 
 >    - |-- pages (页面)
 >      - |-- index_page.dart  (tabbar页面)
 >      - |-- home_page.dart  (首页页面)
