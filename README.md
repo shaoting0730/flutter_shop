@@ -39,7 +39,8 @@
 ![image](https://github.com/pheromone/flutter_shop/blob/master/homePage1.png) <br/>
 ![image](https://github.com/pheromone/flutter_shop/blob/master/homepag2.png) <br/>
 ### 分类
-...
+![image](https://github.com/pheromone/flutter_shop/blob/master/%E5%88%86%E7%B1%BB.png) <br/>
+
 ### 购物车
 ...
 ### 会员中心
