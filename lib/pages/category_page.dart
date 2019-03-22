@@ -45,7 +45,6 @@ class RightCategoryNav extends StatefulWidget {
 }
 
 class _RightCategoryNavState extends State<RightCategoryNav> {
-
   @override
   Widget build(BuildContext context) {
     return Provide<ChildCategory>(
@@ -126,9 +125,10 @@ class _LeftCategoryNavState extends State<LeftCategoryNav> {
 
   void initState() {
     super.initState();
-    _getCategoryData();  // 得到左侧数据
-    _getMallGoods();  // 得到右侧第一栏数据
+    _getCategoryData(); // 得到左侧数据
+    _getMallGoods(); // 得到右侧第一栏数据
   }
+
   // 左侧UI
   Widget _leftInkWell(int index) {
     bool isClick = false; // 默认未点击
@@ -136,7 +136,6 @@ class _LeftCategoryNavState extends State<LeftCategoryNav> {
 
     return InkWell(
       onTap: () {
-        
         setState(() {
           listIndex = index;
         });
@@ -184,20 +183,20 @@ class CategoryGoodsList extends StatefulWidget {
 }
 
 class _CategoryGoodsListState extends State<CategoryGoodsList> {
-  
   @override
   Widget build(BuildContext context) {
     return Provide<CategoryGoodsListProvide>(
       builder: (context, child, data) {
-        return Container(
+        return  Expanded(
+          child: Container(
             width: ScreenUtil().setWidth(570),
-            height: ScreenUtil().setHeight(970),
             child: ListView.builder(
               itemCount: data.goodsList.length,
               itemBuilder: (context, index) {
                 return _goodsItem(data.goodsList, index);
               },
-            ));
+            )),
+        );
       },
     );
   }
