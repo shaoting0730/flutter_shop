@@ -78,6 +78,7 @@ class _RightCategoryNavState extends State<RightCategoryNav> {
     return InkWell(
       onTap: () {
         Provide.value<ChildCategory>(context).changeChildIndex(index);
+        _getMallGoods(item.mallSubId);
       },
       child: Container(
         padding: EdgeInsets.fromLTRB(5.0, 10.0, 5.0, 8.0),
@@ -91,6 +92,25 @@ class _RightCategoryNavState extends State<RightCategoryNav> {
       ),
     );
   }
+
+    // 请求右侧数据
+  void _getMallGoods(String mallSubId) {
+    var data = {
+      'categoryId': Provide.value<ChildCategory>(context).categoryId,
+      'categorySubId': mallSubId,
+      'page': 1
+    };
+
+    request('getMallGoods', formData: data).then((val) {
+      var data = json.decode(val.toString());
+      CategoryGoodsListModel goodsList = CategoryGoodsListModel.fromJson(data);
+      Provide.value<CategoryGoodsListProvide>(context)
+          .getGoodsList(goodsList.data);
+    });
+  }
+
+  
+
 }
 
 // 左侧导航
@@ -112,12 +132,12 @@ class _LeftCategoryNavState extends State<LeftCategoryNav> {
       });
       //改变右侧分类数据
       Provide.value<ChildCategory>(context)
-          .getChildCategoryList(list[0].bxMallSubDto);
+          .getChildCategoryList(list[0].bxMallSubDto,list[0].mallCategoryId);
     });
   }
 
   // 请求右侧数据
-  void _getMallGoods({String categoryId}) async {
+  void _getMallGoods({String categoryId}) {
     var data = {
       'categoryId': categoryId == null ? '4' : categoryId,
       'categorySubId': '',
@@ -151,7 +171,7 @@ class _LeftCategoryNavState extends State<LeftCategoryNav> {
         var childList = list[index].bxMallSubDto;
         var categoryId = list[index].mallCategoryId;
         // 改变右侧分类数据
-        Provide.value<ChildCategory>(context).getChildCategoryList(childList);
+        Provide.value<ChildCategory>(context).getChildCategoryList(childList,categoryId);
         // 发送右侧商品请求
         _getMallGoods(categoryId: categoryId);
       },
