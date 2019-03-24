@@ -63,7 +63,7 @@ class _RightCategoryNavState extends State<RightCategoryNav> {
             scrollDirection: Axis.horizontal,
             itemCount: childCategory.childCategoryList.length,
             itemBuilder: (context, index) {
-              return _rightInkWell(childCategory.childCategoryList[index]);
+              return _rightInkWell(index,childCategory.childCategoryList[index]);
             },
           ),
         );
@@ -71,14 +71,22 @@ class _RightCategoryNavState extends State<RightCategoryNav> {
     );
   }
 
-  Widget _rightInkWell(BxMallSubDto item) {
+  Widget _rightInkWell(int index,BxMallSubDto item) {
+     bool isClick = false;  //是否点击.默认未点击
+     isClick = index == Provide.value<ChildCategory>(context).childIndex ? true : false;
+
     return InkWell(
-      onTap: () {},
+      onTap: () {
+        Provide.value<ChildCategory>(context).changeChildIndex(index);
+      },
       child: Container(
         padding: EdgeInsets.fromLTRB(5.0, 10.0, 5.0, 8.0),
         child: Text(
           item.mallSubName,
-          style: TextStyle(fontSize: ScreenUtil().setSp(28)),
+          style: TextStyle(
+            fontSize: ScreenUtil().setSp(28),
+            color: isClick ? Colors.pink : Colors.black 
+            ),
         ),
       ),
     );
@@ -102,6 +110,7 @@ class _LeftCategoryNavState extends State<LeftCategoryNav> {
       setState(() {
         list = categoryModel.data;
       });
+      //改变右侧分类数据
       Provide.value<ChildCategory>(context)
           .getChildCategoryList(list[0].bxMallSubDto);
     });
@@ -141,7 +150,7 @@ class _LeftCategoryNavState extends State<LeftCategoryNav> {
         });
         var childList = list[index].bxMallSubDto;
         var categoryId = list[index].mallCategoryId;
-        // 发起右侧子菜单请求
+        // 改变右侧分类数据
         Provide.value<ChildCategory>(context).getChildCategoryList(childList);
         // 发送右侧商品请求
         _getMallGoods(categoryId: categoryId);
