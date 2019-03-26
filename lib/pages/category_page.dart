@@ -63,7 +63,8 @@ class _RightCategoryNavState extends State<RightCategoryNav> {
             scrollDirection: Axis.horizontal,
             itemCount: childCategory.childCategoryList.length,
             itemBuilder: (context, index) {
-              return _rightInkWell(index,childCategory.childCategoryList[index]);
+              return _rightInkWell(
+                  index, childCategory.childCategoryList[index]);
             },
           ),
         );
@@ -71,13 +72,15 @@ class _RightCategoryNavState extends State<RightCategoryNav> {
     );
   }
 
-  Widget _rightInkWell(int index,BxMallSubDto item) {
-     bool isClick = false;  //是否点击.默认未点击
-     isClick = index == Provide.value<ChildCategory>(context).childIndex ? true : false;
+  Widget _rightInkWell(int index, BxMallSubDto item) {
+    bool isClick = false; //是否点击.默认未点击
+    isClick = index == Provide.value<ChildCategory>(context).childIndex
+        ? true
+        : false;
 
     return InkWell(
       onTap: () {
-        Provide.value<ChildCategory>(context).changeChildIndex(index);
+        Provide.value<ChildCategory>(context).changeChildIndex(index,item.mallSubId);
         _getMallGoods(item.mallSubId);
       },
       child: Container(
@@ -85,15 +88,14 @@ class _RightCategoryNavState extends State<RightCategoryNav> {
         child: Text(
           item.mallSubName,
           style: TextStyle(
-            fontSize: ScreenUtil().setSp(28),
-            color: isClick ? Colors.pink : Colors.black 
-            ),
+              fontSize: ScreenUtil().setSp(28),
+              color: isClick ? Colors.pink : Colors.black),
         ),
       ),
     );
   }
 
-    // 请求右侧数据
+  // 请求右侧数据
   void _getMallGoods(String mallSubId) {
     var data = {
       'categoryId': Provide.value<ChildCategory>(context).categoryId,
@@ -104,13 +106,14 @@ class _RightCategoryNavState extends State<RightCategoryNav> {
     request('getMallGoods', formData: data).then((val) {
       var data = json.decode(val.toString());
       CategoryGoodsListModel goodsList = CategoryGoodsListModel.fromJson(data);
-      Provide.value<CategoryGoodsListProvide>(context)
-          .getGoodsList(goodsList.data);
+      if (goodsList.data == null) {
+        Provide.value<CategoryGoodsListProvide>(context).getGoodsList([]);
+      } else {
+        Provide.value<CategoryGoodsListProvide>(context)
+            .getGoodsList(goodsList.data);
+      }
     });
   }
-
-  
-
 }
 
 // 左侧导航
@@ -132,7 +135,7 @@ class _LeftCategoryNavState extends State<LeftCategoryNav> {
       });
       //改变右侧分类数据
       Provide.value<ChildCategory>(context)
-          .getChildCategoryList(list[0].bxMallSubDto,list[0].mallCategoryId);
+          .getChildCategoryList(list[0].bxMallSubDto, list[0].mallCategoryId);
     });
   }
 
@@ -171,7 +174,8 @@ class _LeftCategoryNavState extends State<LeftCategoryNav> {
         var childList = list[index].bxMallSubDto;
         var categoryId = list[index].mallCategoryId;
         // 改变右侧分类数据
-        Provide.value<ChildCategory>(context).getChildCategoryList(childList,categoryId);
+        Provide.value<ChildCategory>(context)
+            .getChildCategoryList(childList, categoryId);
         // 发送右侧商品请求
         _getMallGoods(categoryId: categoryId);
       },
@@ -216,16 +220,20 @@ class _CategoryGoodsListState extends State<CategoryGoodsList> {
   Widget build(BuildContext context) {
     return Provide<CategoryGoodsListProvide>(
       builder: (context, child, data) {
-        return  Expanded(
-          child: Container(
-            width: ScreenUtil().setWidth(570),
-            child: ListView.builder(
-              itemCount: data.goodsList.length,
-              itemBuilder: (context, index) {
-                return _goodsItem(data.goodsList, index);
-              },
-            )),
-        );
+        if (data.goodsList.length > 0) {
+          return Expanded(
+            child: Container(
+                width: ScreenUtil().setWidth(570),
+                child: ListView.builder(
+                  itemCount: data.goodsList.length,
+                  itemBuilder: (context, index) {
+                    return _goodsItem(data.goodsList, index);
+                  },
+                )),
+          );
+        } else {
+          return Text('暂无商品');
+        }
       },
     );
   }
