@@ -15,6 +15,9 @@
  [UI尺寸适配库: flutter_screenutil]( https://github.com/OpenFlutter/flutter_screenutil )  <br/>
  [打电话: url_launcher]( https://github.com/flutter/plugins )  <br/>
  [下拉刷新&上拉加载: flutter_easyrefresh]( https://github.com/xuelongqy/flutter_easyrefresh )  <br/>
+ [提示框: fluttertoast]( https://github.com/PonnamKarthik/FlutterToast )  <br/>
+
+ 
  
 ### 代码结构
 >- |--lib
