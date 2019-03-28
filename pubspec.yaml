@@ -25,6 +25,7 @@ dependencies:
   url_launcher: ^5.0.1
   flutter_easyrefresh: ^1.2.7
   provide: ^1.0.2
+  fluttertoast: ^3.0.1
 
 
 dev_dependencies:
