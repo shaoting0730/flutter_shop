@@ -6,7 +6,7 @@ import './provide/child_category.dart';
 import './provide/category_goods_list.dart';
 import 'package:fluro/fluro.dart';
 import './routers/application.dart';
-import './routers/routes.dart';
+import './routers/routers.dart';
 
 
 void main(){
@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final router =Router();
-    Routes.configureRoutes(router);
+    Routers.configureRouters(router);
     Application.router = router;
     return Container(
       child: MaterialApp(
