@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:provide/provide.dart';
 import '../provide/details_info.dart';
@@ -8,19 +9,36 @@ class DetailsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    _getBackInfo(context);
     return Scaffold(
-      appBar: AppBar(title: Text('详情')),
-      body: Container(
-        child: Text(goodsId),
+      appBar: AppBar(
+          leading: IconButton(
+            icon: Icon(Icons.arrow_back),
+            onPressed: () {
+              Navigator.pop(context);
+            },
+          ),
+          title: Text('详情')),
+      body: FutureBuilder(
+        future: _getBackInfo(context),
+        builder: (context, snapshot) {
+          if (snapshot.hasData) {
+            return Container(
+              child: Column(
+                children: <Widget>[
+                  Text(goodsId)
+                ],
+              ),
+            );
+          } else {
+            return Text('加载中');
+          }
+        },
       ),
     );
   }
 
-  void _getBackInfo(BuildContext context) async{
-      await Provide.value<DetailsInfoProvide>(context).getGoodsInfo(goodsId);
-      print('👌');
-
+  Future _getBackInfo(BuildContext context) async {
+    await Provide.value<DetailsInfoProvide>(context).getGoodsInfo(goodsId);
+    return '加载完成';
   }
-
 }
