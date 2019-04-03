@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:provide/provide.dart';
 import '../provide/details_info.dart';
+import './details_page/details_top_area.dart';  // 商品图片 + 名字 + 价格
 
 class DetailsPage extends StatelessWidget {
   final String goodsId;
@@ -25,7 +26,7 @@ class DetailsPage extends StatelessWidget {
             return Container(
               child: Column(
                 children: <Widget>[
-                  Text(goodsId)
+                  DetailsTopArea(),
                 ],
               ),
             );
