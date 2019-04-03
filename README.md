@@ -16,6 +16,8 @@
  [打电话: url_launcher]( https://github.com/flutter/plugins )  <br/>
  [下拉刷新&上拉加载: flutter_easyrefresh]( https://github.com/xuelongqy/flutter_easyrefresh )  <br/>
  [提示框: fluttertoast]( https://github.com/PonnamKarthik/FlutterToast )  <br/>
+ [路由管理: fluro]( https://github.com/theyakka/fluro )  <br/>
+
 
  
  
@@ -25,16 +27,27 @@
 >      - |-- service_url.dart (存放url)
 >    - |-- model 
 >      - |-- category_model.dart (分类model)
+>      - |-- categoryGoodsList.dart (分类列表model)
+>      - |-- details_model.dart (详情model)
 >    - |-- provide 
->      - |-- 
+>      - |-- category_goods_list.dart <分类页--商品列表>
+>      - |-- child_category.dart  <分类页--商品子分类>
+>      - |-- details_info.dart <商品详情>
 >    - |-- pages (页面)
+>      - |-- details_page
+>        - |-- details_top_area.dart  (商品详情的顶部)
 >      - |-- index_page.dart  (tabbar页面)
 >      - |-- home_page.dart  (首页页面)
+>      - |-- details_page.dart  (商品详情页面)
 >      - |-- category_page.dart  (分类页面)
 >      - |-- cart_page.dart  (购物车页面)
 >      - |-- member_page.dart  (会员中心页面)
 >    - |-- service 
 >      - |-- service_method.dart (网络请求)
+>    - |-- routers 
+>      - |-- application.dart (静态化Router对象)
+>      - |-- router_handle.dart (handle:负责跳转)
+>      - |-- router.dart (handle注册进fluro)
 >    - |-- mian.dart  (入口) 
 
 ## 项目截图
