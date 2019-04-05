@@ -17,6 +17,7 @@
  [下拉刷新&上拉加载: flutter_easyrefresh]( https://github.com/xuelongqy/flutter_easyrefresh )  <br/>
  [提示框: fluttertoast]( https://github.com/PonnamKarthik/FlutterToast )  <br/>
  [路由管理: fluro]( https://github.com/theyakka/fluro )  <br/>
+ [html加载: flutter_html]( https://github.com/Sub6Resources/flutter_html)  <br/>
 
 
  
@@ -36,6 +37,9 @@
 >    - |-- pages (页面)
 >      - |-- details_page
 >        - |-- details_top_area.dart  (商品详情的顶部)
+>        - |-- details_explain.dart  (商品详情的解释固定UI)
+>        - |-- details_tab.dart  (商品详情的tab)
+>        - |-- details_web.dart  (商品详情的leftweb)
 >      - |-- index_page.dart  (tabbar页面)
 >      - |-- home_page.dart  (首页页面)
 >      - |-- details_page.dart  (商品详情页面)
