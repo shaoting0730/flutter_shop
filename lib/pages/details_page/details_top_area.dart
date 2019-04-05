@@ -8,16 +8,16 @@ class DetailsTopArea extends StatelessWidget {
   Widget build(BuildContext context) {
     return Provide<DetailsInfoProvide>(
       builder: (context,child,val){
-        var goodsInfo = Provide.value<DetailsInfoProvide>(context).goodsInfo;
+        var goodsInfo = Provide.value<DetailsInfoProvide>(context).goodsInfo.data.goodInfo;
         if(goodsInfo != null){
           return Container(
             color: Colors.white,
             child: Column(
               children: <Widget>[
-                _goodsImage(goodsInfo.data.goodInfo.image1),
-                _goodsName(goodsInfo.data.goodInfo.goodsName),
-                _goodsNum(goodsInfo.data.goodInfo.goodsSerialNumber),
-                _goodsPrice(goodsInfo.data.goodInfo.presentPrice,goodsInfo.data.goodInfo.oriPrice),
+                _goodsImage(goodsInfo.image1),
+                _goodsName(goodsInfo.goodsName),
+                _goodsNum(goodsInfo..goodsSerialNumber),
+                _goodsPrice(goodsInfo.presentPrice,goodsInfo.oriPrice),
               ],
             ),
           );

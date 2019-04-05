@@ -4,6 +4,9 @@ import 'package:provide/provide.dart';
 import '../provide/details_info.dart';
 import './details_page/details_top_area.dart';  // 商品图片 + 名字 + 价格
 import './details_page/details_explain.dart'; // 
+import './details_page/details_tab.dart'; // 
+import './details_page/details_web.dart';
+
 class DetailsPage extends StatelessWidget {
   final String goodsId;
   DetailsPage(this.goodsId);
@@ -27,7 +30,9 @@ class DetailsPage extends StatelessWidget {
               child: ListView(
                 children: <Widget>[
                   DetailsTopArea(),
-                  DetailsExplain()
+                  DetailsExplain(),
+                  DetailsTab(),
+                  DetailsWeb()
                 ],
               ),
             );
