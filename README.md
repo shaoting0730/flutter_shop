@@ -58,6 +58,8 @@
 ### 首页
 ![image](https://github.com/pheromone/flutter_shop/blob/master/homePage1.png) <br/>
 ![image](https://github.com/pheromone/flutter_shop/blob/master/homepag2.png) <br/>
+![image](https://github.com/pheromone/flutter_shop/blob/master/%E5%95%86%E5%93%81%E8%AF%A6%E6%83%85.png) <br/>
+
 ### 分类
 ![image](https://github.com/pheromone/flutter_shop/blob/master/%E5%88%86%E7%B1%BB.png) <br/>
 
