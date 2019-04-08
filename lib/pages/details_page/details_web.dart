@@ -24,6 +24,7 @@ class DetailsWeb extends StatelessWidget {
         } else {
           return Container(
             width: ScreenUtil().setWidth(750),
+            height: ScreenUtil().setHeight(200),
             padding: EdgeInsets.all(10),
             alignment: Alignment.center,
             child: Text('暂时没有数据'),
