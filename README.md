@@ -18,6 +18,7 @@
  [提示框: fluttertoast]( https://github.com/PonnamKarthik/FlutterToast )  <br/>
  [路由管理: fluro]( https://github.com/theyakka/fluro )  <br/>
  [html加载: flutter_html]( https://github.com/Sub6Resources/flutter_html)  <br/>
+ [数据持久化: shared_preferences]( https://github.com/flutter/plugins/tree/master/packages/shared_preferences)  <br/>
 
 
  
