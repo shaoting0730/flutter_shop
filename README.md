@@ -35,6 +35,7 @@
 >      - |-- category_goods_list.dart <分类页--商品列表>
 >      - |-- child_category.dart  <分类页--商品子分类>
 >      - |-- details_info.dart <商品详情>
+>      - |-- cart.dart <购物车逻辑>
 >    - |-- pages (页面)
 >      - |-- details_page
 >        - |-- details_top_area.dart  (商品详情的顶部)
