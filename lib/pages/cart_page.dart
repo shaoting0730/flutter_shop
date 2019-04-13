@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provide/provide.dart';
 import '../provide/cart.dart';
+import './cart_page/cart_item.dart';
 import 'dart:async';
 
 class CartPage extends StatelessWidget {
@@ -18,9 +19,7 @@ class CartPage extends StatelessWidget {
             return ListView.builder(
               itemCount:castList.length,
               itemBuilder: (context,index){
-                return ListTile(
-                  title: Text(castList[index].goodsName),
-                );
+                return CartItem(castList[index]);
               },
             );
           }else{

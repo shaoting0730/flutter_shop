@@ -3,17 +3,17 @@ class CartInfoModel {
   String goodsName;
   int count;
   double price;
-  String images;
+  String image;
 
   CartInfoModel(
-      {this.goodsId, this.goodsName, this.count, this.price, this.images});
+      {this.goodsId, this.goodsName, this.count, this.price, this.image});
 
   CartInfoModel.fromJson(Map<String, dynamic> json) {
     goodsId = json['goodsId'];
     goodsName = json['goodsName'];
     count = json['count'];
     price = json['price'];
-    images = json['images'];
+    image = json['image'];
   }
 
   Map<String, dynamic> toJson() {
@@ -22,7 +22,7 @@ class CartInfoModel {
     data['goodsName'] = this.goodsName;
     data['count'] = this.count;
     data['price'] = this.price;
-    data['images'] = this.images;
+    data['image'] = this.image;
     return data;
   }
 }

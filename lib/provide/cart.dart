@@ -61,6 +61,7 @@ class CartProvide with ChangeNotifier{
           cartList = [];
         }else{
           List<Map> tempList = (json.decode(carString.toString()) as List).cast();
+          print(tempList);
           tempList.forEach((item){
             cartList.add(CartInfoModel.fromJson(item));
           });
