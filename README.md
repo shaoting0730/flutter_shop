@@ -28,6 +28,7 @@
 >    - |-- config 
 >      - |-- service_url.dart (存放url)
 >    - |-- model 
+>      - |-- cartInfo.dart (购物车model)
 >      - |-- category_model.dart (分类model)
 >      - |-- categoryGoodsList.dart (分类列表model)
 >      - |-- details_model.dart (详情model)
@@ -37,7 +38,10 @@
 >      - |-- details_info.dart <商品详情>
 >      - |-- cart.dart <购物车逻辑>
 >    - |-- pages (页面)
+>      - |-- cart_page
+>        - |-- cart_item.dart  (购物车item)
 >      - |-- details_page
+>        - |-- details_bottom.dart  (加入购物车/立即购买按钮)
 >        - |-- details_top_area.dart  (商品详情的顶部)
 >        - |-- details_explain.dart  (商品详情的解释固定UI)
 >        - |-- details_tab.dart  (商品详情的tab)
