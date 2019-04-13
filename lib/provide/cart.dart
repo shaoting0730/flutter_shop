@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:convert';
+import '../model/cartinfo.dart';
 
 class CartProvide with ChangeNotifier{
     String carString = "[]";
+    List<CartInfoModel> cartList = [];
     // 添加购物车
     save(goodsId,goodsName,count,price,images) async{
       SharedPreferences prefs = await SharedPreferences.getInstance();
@@ -15,22 +17,27 @@ class CartProvide with ChangeNotifier{
       tempList.forEach((item){
         if(item['goodsId'] == goodsId){
           tempList[ival]['count'] = item['count'] + 1;
+          cartList[ival].count++;
           isHave = true;
         }
         ival++;
       });
       if(!isHave){
-        tempList.add({
+        Map<String,dynamic> newGoods = {
           'goodsId':goodsId,
           'goodsName':goodsName,
           'count':count,
           'price':price,
           'image':images
-        });
+        };
+        tempList.add(newGoods);
+        cartList.add(CartInfoModel.fromJson(newGoods));
       }
 
       carString = json.encode(tempList).toString();
       print(carString);
+      print(cartList);
+
       prefs.setString('cartInfo', carString);
       notifyListeners();
 
@@ -40,9 +47,26 @@ class CartProvide with ChangeNotifier{
     remove() async{
       SharedPreferences prefs = await SharedPreferences.getInstance();
       prefs.remove('cartInfo');
+      cartList = [];
       notifyListeners();
       print('清空购物车');
     }
 
+    // 获取购物车
+    getCartInfo() async{
+        SharedPreferences prefs = await SharedPreferences.getInstance();
+        carString = prefs.getString('cartInfo');
+        cartList = [];
+        if(carString == null){
+          cartList = [];
+        }else{
+          List<Map> tempList = (json.decode(carString.toString()) as List).cast();
+          tempList.forEach((item){
+            cartList.add(CartInfoModel.fromJson(item));
+          });
+        }
+       notifyListeners();
+
+    }
 
 }
