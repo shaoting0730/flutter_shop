@@ -308,7 +308,7 @@ class Recommend extends StatelessWidget {
          Application.router.navigateTo(context, "./detail?id=${recommendList[index]['goodsId']}");
       },
       child: Container(
-        height: ScreenUtil().setHeight(330),
+        height: ScreenUtil().setHeight(280),
         width: ScreenUtil().setWidth(250),
         padding: EdgeInsets.all(8.0),
         decoration: BoxDecoration(
@@ -333,7 +333,7 @@ class Recommend extends StatelessWidget {
   // 横向列表
   Widget _recommedList() {
     return Container(
-      height: ScreenUtil().setHeight(330),
+      height: ScreenUtil().setHeight(350),
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: recommendList.length,
