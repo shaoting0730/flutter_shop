@@ -40,6 +40,7 @@
 >    - |-- pages (页面)
 >      - |-- cart_page
 >        - |-- cart_item.dart  (购物车item)
+>        - |-- cart_count.dart  (购物车+-按钮)
 >      - |-- details_page
 >        - |-- details_bottom.dart  (加入购物车/立即购买按钮)
 >        - |-- details_top_area.dart  (商品详情的顶部)
