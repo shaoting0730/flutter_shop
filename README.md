@@ -37,10 +37,12 @@
 >      - |-- child_category.dart  <分类页--商品子分类>
 >      - |-- details_info.dart <商品详情>
 >      - |-- cart.dart <购物车逻辑>
+>      - |-- currentIndex.dart <tabbar切换逻辑>
 >    - |-- pages (页面)
 >      - |-- cart_page
 >        - |-- cart_item.dart  (购物车item)
 >        - |-- cart_count.dart  (购物车+-按钮)
+>        - |-- cart_bottom.dart  (购物车底部UI)
 >      - |-- details_page
 >        - |-- details_bottom.dart  (加入购物车/立即购买按钮)
 >        - |-- details_top_area.dart  (商品详情的顶部)
@@ -71,7 +73,8 @@
 ![image](https://github.com/pheromone/flutter_shop/blob/master/%E5%88%86%E7%B1%BB.png) <br/>
 
 ### 购物车
-...
+![image](https://github.com/pheromone/flutter_shop/blob/master/%E8%B4%AD%E7%89%A9%E8%BD%A6.png) <br/>
+
 ### 会员中心
 ...
 
