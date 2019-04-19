@@ -37,6 +37,7 @@ class DetailsBottom extends StatelessWidget {
               ),
               Provide<CartProvide>(
                 builder: (context,child,val){
+                   Provide.value<CartProvide>(context).getCartInfo();
                    int goodsCount = Provide.value<CartProvide>(context).allGoodsCount;
                    return Positioned(
                      top:0,
