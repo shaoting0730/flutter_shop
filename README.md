@@ -1,4 +1,4 @@
-#  Flutter 电商学习项目 (更新中)
+#  Flutter 电商学习项目 (基本课程结束)
  [视频教程:技术胖]( https://m.qlchat.com/wechat/page/topic-simple-video?topicId=2000003599735644&byhand=1 )    <br/>
 
 ## 版本信息:
