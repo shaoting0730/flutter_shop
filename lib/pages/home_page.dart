@@ -6,6 +6,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';
 import '../routers/application.dart';
+import '../provide/currentIndex.dart';
+import 'package:provide/provide.dart';
+import '../provide/child_category.dart';
+import '../model/category_model.dart';
 
 class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
@@ -200,10 +204,11 @@ class TopNavigator extends StatelessWidget {
   TopNavigator({Key key, this.navigatorList}) : super(key: key);
 
   // 返回一个item小部件
-  Widget _gridViewItemUI(BuildContext context, item) {
+  Widget _gridViewItemUI(BuildContext context, item,index) {
     return InkWell(
       onTap: () {
-        print('点击了');
+        // print('点击了');
+        _goCategory(context,index,item['mallCategoryId']);
       },
       child: Column(
         children: <Widget>[
@@ -214,6 +219,17 @@ class TopNavigator extends StatelessWidget {
     );
   }
 
+    void _goCategory(context,int index,String categroyId) async {
+    await request('getCategory').then((val) {
+      var data = json.decode(val.toString());
+      CategoryModel category = CategoryModel.fromJson(data);
+      List   list = category.data;
+      Provide.value<ChildCategory>(context).changeCategory(categroyId,index);
+      Provide.value<ChildCategory>(context).getChildCategory( list[index].bxMallSubDto,categroyId);
+      Provide.value<CurrentIndexProvide>(context).changeIndex(1);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     // 只截取10个数据
@@ -221,6 +237,7 @@ class TopNavigator extends StatelessWidget {
       this.navigatorList.removeRange(10, this.navigatorList.length);
     }
 
+    var tempIndex=-1;
     return Container(
       height: ScreenUtil().setHeight(320),
       padding: EdgeInsets.all(3.0),
@@ -229,7 +246,8 @@ class TopNavigator extends StatelessWidget {
         crossAxisCount: 5,
         padding: EdgeInsets.all(5.0),
         children: navigatorList.map((item) {
-          return _gridViewItemUI(context, item);
+          tempIndex++;
+          return _gridViewItemUI(context, item,tempIndex);
         }).toList(),
       ),
     );
