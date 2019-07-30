@@ -13,7 +13,7 @@
  [网络请求库: dio]( https://github.com/flutterchina/dio )  <br/>
  [轮播库: flutter_swiper]( https://github.com/best-flutter/flutter_swiper )  <br/>
  [UI尺寸适配库: flutter_screenutil]( https://github.com/OpenFlutter/flutter_screenutil )  <br/>
- [打电话: url_launcher]( https://github.com/flutter/plugins )  <br/>
+ [打电话: url_launcher]( https://github.com/flutter/plugins/tree/master/packages/url_launcher )  <br/>
  [下拉刷新&上拉加载: flutter_easyrefresh]( https://github.com/xuelongqy/flutter_easyrefresh )  <br/>
  [提示框: fluttertoast]( https://github.com/PonnamKarthik/FlutterToast )  <br/>
  [路由管理: fluro]( https://github.com/theyakka/fluro )  <br/>
